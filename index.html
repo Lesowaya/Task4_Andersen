@@ -1,0 +1,132 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
+  <title>Task4</title>
+</head>
+<body>
+<div class="size-body">
+  <div class="choose-country">
+    <div class="active-country" data-country="BR" data-api="api.nestoria.com.br">Brazil</div>
+    <div data-country="FR" data-api="api.nestoria.fr">France</div>
+    <div data-country="DE" data-api="api.nestoria.de">Germany</div>
+    <div data-country="IN" data-api="api.nestoria.in">India</div>
+    <div data-country="MX" data-api="api.nestoria.it">Mexico</div>
+    <div data-country="PE" data-api="api.nestoria.mx">Peru</div>
+    <div data-country="ES" data-api="api.nestoria.es">Spain</div>
+    <div data-country="GB" data-api="api.nestoria.co.uk">United Kingdom</div>
+  </div>
+
+  <div class="parametrs-with-i">
+    <div class="parametrs">
+      <form class="params">Type:
+        <label><input type="radio" name="type" value="buy" checked>Buy<br>
+          <input type="radio" name="type" value="rent">Rent<br>
+          <input type="radio" name="type" value="share">Share<br>
+        </label>
+        <hr>
+        <label>Price min: <input type="number" name="price_min" placeholder="0"> </label>
+        <label>Price max: <input type="number" name="price_max" placeholder="99999"> </label>
+        <hr>
+        <label>Rooms min: <input type="number" name="room_min" placeholder="0"> </label>
+        <label>Rooms max: <input type="number" name="room_max" placeholder="99999"> </label>
+        <hr>
+        <label>Bedrooms min: <input type="number" name="bedroom_min" placeholder="0"></label>
+        <label>Bedrooms max: <input type="number" name="bedroom_max" placeholder="99999"></label>
+        <hr>
+        <label>Bathroom min: <input type="number" name="bathroom_min" placeholder="0"></label>
+        <label>Bathroom max: <input type="number" name="bathroom_max" placeholder="99999"></label>
+        <hr>
+        <label>Only with photo: <input type="radio" name="has_photo"></label>
+      </form>
+    </div>
+    <i class="fa fa-3x fa-chevron-right arrow" aria-hidden="true"></i>
+  </div>
+
+  <div class="sort-with-i">
+    <div class="sort-container">
+      <form class="sort">Sort results by:
+        <label><input type="radio" name="sort" value="relevancy" checked>Relevancy</label>
+        <label><input type="radio" name="sort" value="bedroom_lowhigh">Bedroom lowhigh</label>
+        <label><input type="radio" name="sort" value="bedroom_highlow">Bedroom highlow</label>
+        <label><input type="radio" name="sort" value="price_lowhigh">Price lowhigh</label>
+        <label><input type="radio" name="sort" value="price_highlow">Price highlow</label>
+        <label><input type="radio" name="sort" value="newest">Newest</label>
+        <label><input type="radio" name="sort" value="oldest">Oldest</label>
+        <label><input type="radio" name="sort" value="random">Random</label>
+      </form>
+    </div>
+    <i class="fa fa-3x fa-chevron-left arrow-sort" aria-hidden="true"></i>
+  </div>
+
+  <form class="enter-city center">
+    <label>Enter the city:<br>
+      <input type="text" placeholder="London" id="city-variants"
+             autocomplete="off" list="cities-list" onkeyup="showVariantsOfCities(event)">
+      <i class="fa fa-1x fa-search" aria-hidden="true" onclick="showVariantsOfPlace()"></i>
+    </label>
+    <i class="fa fa-star i-favorite" onclick="favorites.init()" aria-hidden="true"></i>
+  </form>
+  <datalist id="cities-list">
+
+  </datalist>
+  <div class="results center">
+    <div>
+
+    </div>
+
+    <ul id="pagination-demo" class="pagination-sm"></ul>
+  </div>
+  <div class="bg-load">
+    <div class="load">
+      <div class="wBall" id="wBall_1">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_2">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_3">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_4">
+        <div class="wInnerBall"></div>
+      </div>
+      <div class="wBall" id="wBall_5">
+        <div class="wInnerBall"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="overlay"></div>
+<div id="modal_form" class="modal-info">
+  <span id="modal_close">X</span>
+
+
+</div>
+<div class="msg">
+  This item have been saved and added to favorites
+</div>
+</div>
+</body>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js"></script>
+<script type="text/javascript" src="jquery.twbsPagination.min.js"></script>
+<script src="https://use.fontawesome.com/50d57736d2.js"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1mvz6KVwVQbhvRXuBggqkFI5aXrle0E&libraries=places">
+</script>
+<script src="favorites.js" type="text/javascript"></script>
+<script src="paginator.js" type="text/javascript"></script>
+<script src="modalShowItem.js" type="text/javascript"></script>
+<script src="items.js" type="text/javascript"></script>
+<script src="citiesList.js" type="text/javascript"></script>
+<script src="flatsList.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"></script>
+</html>
